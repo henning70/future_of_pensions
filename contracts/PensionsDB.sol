@@ -9,19 +9,19 @@ contract PensionsDB {
 		owner = msg.sender;
 	}
 
-	mapping(address => pensionsDB) public pensioners;
+	mapping(uint => pensionsDB) public pensioners;
 	struct pensionsDB {
 		address acc;
 		uint bsn;
 	}
 
-	function checkPensioner(address acc, uint bsn) returns (uint) {
-	    pensionsDB pensioner_acc = pensioners[acc];
+	function checkPensioner(uint bsn) returns (uint) {
+	    pensionsDB pensioner_acc = pensioners[bsn];
 	    return pensioner_acc.bsn;
 	}
 
 	function registerPensioner(address acc, uint bsn) returns (bool) {
-	    pensioners[acc] = pensionsDB(acc, bsn);
+	    pensioners[bsn] = pensionsDB(acc, bsn);
 	    return true;
 	}
 

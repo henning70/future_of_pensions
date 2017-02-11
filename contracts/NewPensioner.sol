@@ -18,8 +18,8 @@ contract NewPensioner is PensionsDB, Pensions {
 		owner = msg.sender;
 	}
 
-	function checkPensioner(address pensioner_acc, uint pensioner_bsn) returns (uint) {
-        return PensionsDB.checkPensioner(pensioner_acc, pensioner_bsn);
+	function checkPensioner(uint pensioner_bsn) returns (uint) {
+        return PensionsDB.checkPensioner(pensioner_bsn);
 	}
 
 	function registerPensioner(address pensioner_acc, uint pensioner_bsn) returns (bool) {
