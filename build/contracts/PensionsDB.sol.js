@@ -361,6 +361,14 @@ var SolidityEvent = require("web3/lib/web3/event.js");
         "outputs": [
           {
             "name": "",
+            "type": "address"
+          },
+          {
+            "name": "",
+            "type": "address"
+          },
+          {
+            "name": "",
             "type": "uint256"
           }
         ],
@@ -389,10 +397,40 @@ var SolidityEvent = require("web3/lib/web3/event.js");
         "type": "function"
       },
       {
+        "constant": true,
+        "inputs": [
+          {
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "name": "pensioners",
+        "outputs": [
+          {
+            "name": "acc",
+            "type": "address"
+          },
+          {
+            "name": "c_addr",
+            "type": "address"
+          },
+          {
+            "name": "bsn",
+            "type": "uint256"
+          }
+        ],
+        "payable": false,
+        "type": "function"
+      },
+      {
         "constant": false,
         "inputs": [
           {
             "name": "acc",
+            "type": "address"
+          },
+          {
+            "name": "c_addr",
             "type": "address"
           },
           {
@@ -411,28 +449,6 @@ var SolidityEvent = require("web3/lib/web3/event.js");
         "type": "function"
       },
       {
-        "constant": true,
-        "inputs": [
-          {
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "name": "pensioners",
-        "outputs": [
-          {
-            "name": "acc",
-            "type": "address"
-          },
-          {
-            "name": "bsn",
-            "type": "uint256"
-          }
-        ],
-        "payable": false,
-        "type": "function"
-      },
-      {
         "inputs": [],
         "payable": false,
         "type": "constructor"
@@ -440,13 +456,136 @@ var SolidityEvent = require("web3/lib/web3/event.js");
       {
         "payable": true,
         "type": "fallback"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "name": "pensioner_acc",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "name": "pensions_caddr",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "name": "pensioner_bsn",
+            "type": "uint256"
+          }
+        ],
+        "name": "checkPensioner_ev",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "name": "pensioner_acc",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "name": "pensions_caddr",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "name": "pensioner_bsn",
+            "type": "uint256"
+          }
+        ],
+        "name": "registerPensioner_ev",
+        "type": "event"
       }
     ],
-    "unlinked_binary": "0x606060405234610000575b60008054600160a060020a0319166c01000000000000000000000000338102041790555b5b6101fa8061003d6000396000f36060604052361561004b5760e060020a600035046379da2fb381146100695780638da5cb5b1461008b5780639445eb3a146100b4578063ab9a9faa146100c3578063ad114d23146100ea575b6100675b6000600060003411156100625750349050335b5b5050565b005b346100005761007960043561011d565b60408051918252519081900360200190f35b346100005761009861013a565b60408051600160a060020a039092168252519081900360200190f35b3461000057610067610149565b005b34610000576100d6600435602435610172565b604080519115158252519081900360200190f35b34610000576100fa6004356101d5565b60408051600160a060020a03909316835260208301919091528051918290030190f35b600081815260016020819052604090912090810154905b50919050565b600054600160a060020a031681565b60005433600160a060020a039081169116141561016e57600054600160a060020a0316ff5b5b5b565b60408051808201825283815260208082018481526000858152600192839052939093209151825473ffffffffffffffffffffffffffffffffffffffff19166c01000000000000000000000000918202919091041782559151908201555b92915050565b60016020819052600091825260409091208054910154600160a060020a03909116908256",
-    "events": {},
-    "updated_at": 1486819904373,
+    "unlinked_binary": "0x606060405234610000575b60008054600160a060020a0319166c01000000000000000000000000338102041790555b5b61031e8061003d6000396000f36060604052361561004b5760e060020a600035046379da2fb381146100695780638da5cb5b146100a35780639445eb3a146100cc578063ad114d23146100db578063c1e58b7214610115575b6100675b6000600060003411156100625750349050335b5b5050565b005b346100005761007960043561013f565b60408051600160a060020a0394851681529290931660208301528183015290519081900360600190f35b34610000576100b06101e5565b60408051600160a060020a039092168252519081900360200190f35b34610000576100676101f4565b005b346100005761007960043561021d565b60408051600160a060020a0394851681529290931660208301528183015290519081900360600190f35b346100005761012b60043560243560443561024d565b604080519115158252519081900360200190f35b60008181526001602081815260408084208054938101546002909101548251600160a060020a0395861681529190941692810192909252818101929092529051829182917f3da38313adcbb1292df3a47801ff42987d0010c2ea70e576cf7075bc6e29c4f79181900360600190a15050506000818152600160208190526040909120805491810154600290910154600160a060020a0392831692909116905b9193909250565b600054600160a060020a031681565b60005433600160a060020a039081169116141561021957600054600160a060020a0316ff5b5b5b565b6001602081905260009182526040909120805491810154600290910154600160a060020a03928316929091169083565b60408051600160a060020a0380861682528416602082015280820183905290516000917f5a636851659ccc1b8d5454819786a657ad8b4b05ab191ccfd43bab41653c83c0919081900360600190a1506040805160608101825284815260208082018581528284018581526000868152600193849052949094209251835473ffffffffffffffffffffffffffffffffffffffff199081166c01000000000000000000000000928302839004178555915184840180549093169082029190910417905591516002909101555b939250505056",
+    "events": {
+      "0x2fbba1a2d85c769c3d57f312c118dfa152b8b73091186af5be95020244a131ca": {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "name": "pensioner_acc",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "name": "pensioner_bsn",
+            "type": "uint256"
+          }
+        ],
+        "name": "checkPensioner_ev",
+        "type": "event"
+      },
+      "0xc87762ea57545adbd42fb303eabacee251a10dfd7095b2a64da4bcfbe68e648d": {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "name": "pensioner_acc",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "name": "pensioner_bsn",
+            "type": "uint256"
+          }
+        ],
+        "name": "registerPensioner_ev",
+        "type": "event"
+      },
+      "0x3da38313adcbb1292df3a47801ff42987d0010c2ea70e576cf7075bc6e29c4f7": {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "name": "pensioner_acc",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "name": "pensions_caddr",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "name": "pensioner_bsn",
+            "type": "uint256"
+          }
+        ],
+        "name": "checkPensioner_ev",
+        "type": "event"
+      },
+      "0x5a636851659ccc1b8d5454819786a657ad8b4b05ab191ccfd43bab41653c83c0": {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "name": "pensioner_acc",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "name": "pensions_caddr",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "name": "pensioner_bsn",
+            "type": "uint256"
+          }
+        ],
+        "name": "registerPensioner_ev",
+        "type": "event"
+      }
+    },
+    "updated_at": 1486848316510,
     "links": {},
-    "address": "0x41cf819748a95d5677093d831b73ff64954a5647"
+    "address": "0xc18595a6fb7cf34ac4d0c8e48389df17904751e6"
   }
 };
 
