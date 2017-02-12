@@ -3,7 +3,6 @@ pragma solidity ^0.4.6;
 contract PensionsDB {
 	address public owner;
 
-	// define some events
     event checkPensioner_ev(address pensioner_acc, address pensions_caddr, uint pensioner_bsn);
     event registerPensioner_ev(address pensioner_acc, address pensions_caddr, uint pensioner_bsn);
 

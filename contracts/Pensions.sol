@@ -9,7 +9,6 @@ contract Pensions {
 	uint pensioner_dob;
 	uint public balance;
 
-	// define some events
     event Pensions_ev(address owner, uint balance, address pensioner_acc, bytes pensioner_name, bytes pensioner_addr, uint pensioner_bsn, uint pensioner_dob);
 
 	modifier onlyOwner() { if (msg.sender == owner) _; }
