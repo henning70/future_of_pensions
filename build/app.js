@@ -45713,10 +45713,10 @@ module.exports = transfer;
 },{"crypto":59}],225:[function(require,module,exports){
 module.exports = {
   "ConvertLib": require("/development/Ethereum/DAPPS/future_of_pensions/build/contracts/ConvertLib.sol.js"),
-  "NewPensioner": require("/development/Ethereum/DAPPS/future_of_pensions/build/contracts/NewPensioner.sol.js"),
-  "PensionsDB": require("/development/Ethereum/DAPPS/future_of_pensions/build/contracts/PensionsDB.sol.js"),
   "Migrations": require("/development/Ethereum/DAPPS/future_of_pensions/build/contracts/Migrations.sol.js"),
+  "NewPensioner": require("/development/Ethereum/DAPPS/future_of_pensions/build/contracts/NewPensioner.sol.js"),
   "Pensions": require("/development/Ethereum/DAPPS/future_of_pensions/build/contracts/Pensions.sol.js"),
+  "PensionsDB": require("/development/Ethereum/DAPPS/future_of_pensions/build/contracts/PensionsDB.sol.js"),
 };
 },{"/development/Ethereum/DAPPS/future_of_pensions/build/contracts/ConvertLib.sol.js":1,"/development/Ethereum/DAPPS/future_of_pensions/build/contracts/Migrations.sol.js":2,"/development/Ethereum/DAPPS/future_of_pensions/build/contracts/NewPensioner.sol.js":3,"/development/Ethereum/DAPPS/future_of_pensions/build/contracts/Pensions.sol.js":4,"/development/Ethereum/DAPPS/future_of_pensions/build/contracts/PensionsDB.sol.js":5}]},{},[225])(225)
 });
